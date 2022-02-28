@@ -1,0 +1,31 @@
+Redux
+* dictionary
+* puzzleWord
+* gameBoard
+* numOfGuesses
+* error
+* solved
+* dictionaryLoaded
+
+
+Slice
+* loadDictionary
+* solvePuzzle
+* createNewPuzzleWord
+* setError
+* increaseNumOfGuesses
+* resetGame
+
+
+Hooks
+-----
+* useFiveLetterCheck: 
+* useCheckSolution:     
+
+
+Components
+
+* InputField
+* GameBoard
+* New Game Button
+* Header
