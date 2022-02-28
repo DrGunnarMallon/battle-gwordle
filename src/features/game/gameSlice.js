@@ -5,9 +5,10 @@ const initialState = {
   dictionary: [],
   isDictionaryLoaded: false,
   puzzleWord: '',
-  gameBoard: [],
+  gameBoard: Array(8).fill(Array(5).fill({ char: '', color: 'B' })),
   numOfGuesses: 0,
   isSolved: false,
+  hasLost: false,
   error: '',
 };
 
@@ -29,13 +30,11 @@ export const gameSlice = createSlice({
   reducers: {
     resetGame: (state) => {
       state.puzzleWord = '';
-      state.gameBoard = '';
+      state.gameBoard = Array(8).fill(Array(5).fill({ char: '', color: 'B' }));
       state.numOfGuesses = 0;
       state.isSolved = false;
+      state.hasLost = false;
       state.error = '';
-    },
-    increaseNumOfGuesses: (state) => {
-      state.numOfGuesses = state.numOfGuesses + 1;
     },
     setError: (state, action) => {
       state.error = action.payload;
@@ -47,6 +46,13 @@ export const gameSlice = createSlice({
       if (state.dictionary) {
         const index = (Math.random() * state.dictionary.length + 1).toFixed(0);
         state.puzzleWord = state.dictionary[index];
+      }
+    },
+    addGuess: (state, action) => {
+      state.gameBoard[state.numOfGuesses] = action.payload;
+      state.numOfGuesses = state.numOfGuesses + 1;
+      if (state.numOfGuesses === 8) {
+        state.hasLost = true;
       }
     },
   },
@@ -66,6 +72,12 @@ export const gameSlice = createSlice({
   },
 });
 
-export const { resetGame, increaseNumOfGuesses, setError, solvePuzzle, createNewPuzzleWord } =
-  gameSlice.actions;
+export const {
+  resetGame,
+  increaseNumOfGuesses,
+  setError,
+  solvePuzzle,
+  createNewPuzzleWord,
+  addGuess,
+} = gameSlice.actions;
 export default gameSlice.reducer;

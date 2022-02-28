@@ -1,64 +1,41 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
+import { useSelector } from 'react-redux';
 
 function GameBoard() {
+  const gameBoard = useSelector((state) => state.game.gameBoard);
+  const isSolved = useSelector((state) => state.game.isSolved);
+  const hasLost = useSelector((state) => state.game.hasLost);
+
+  if (isSolved) {
+    return (
+      <>
+        <h1>You won!!</h1>
+        <p>Legend!</p>
+      </>
+    );
+  }
+
+  if (hasLost) {
+    return (
+      <>
+        <h1>YOU LOSER</h1>
+        <p>Mate, you had 8 gos!</p>
+      </>
+    );
+  }
+
   return (
-    <div className="play-board">
-      <div className="line1 row">
-        <div className="white guess-field pos1"></div>
-        <div className="white guess-field pos2"></div>
-        <div className="white guess-field pos3"></div>
-        <div className="white guess-field pos4"></div>
-        <div className="white guess-field pos5"></div>
-      </div>
-      <div className="line2 row">
-        <div className="white guess-field pos1"></div>
-        <div className="white guess-field pos2"></div>
-        <div className="white guess-field pos3"></div>
-        <div className="white guess-field pos4"></div>
-        <div className="white guess-field pos5"></div>
-      </div>
-      <div className="line3 row">
-        <div className="white guess-field pos1"></div>
-        <div className="white guess-field pos2"></div>
-        <div className="white guess-field pos3"></div>
-        <div className="white guess-field pos4"></div>
-        <div className="white guess-field pos5"></div>
-      </div>
-      <div className="line4 row">
-        <div className="white guess-field pos1"></div>
-        <div className="white guess-field pos2"></div>
-        <div className="white guess-field pos3"></div>
-        <div className="white guess-field pos4"></div>
-        <div className="white guess-field pos5"></div>
-      </div>
-      <div className="line5 row">
-        <div className="white guess-field pos1"></div>
-        <div className="white guess-field pos2"></div>
-        <div className="white guess-field pos3"></div>
-        <div className="white guess-field pos4"></div>
-        <div className="white guess-field pos5"></div>
-      </div>
-      <div className="line6 row">
-        <div className="white guess-field pos1"></div>
-        <div className="white guess-field pos2"></div>
-        <div className="white guess-field pos3"></div>
-        <div className="white guess-field pos4"></div>
-        <div className="white guess-field pos5"></div>
-      </div>
-      <div className="line7 row">
-        <div className="white guess-field pos1"></div>
-        <div className="white guess-field pos2"></div>
-        <div className="white guess-field pos3"></div>
-        <div className="white guess-field pos4"></div>
-        <div className="white guess-field pos5"></div>
-      </div>
-      <div className="line8 row">
-        <div className="white guess-field pos1"></div>
-        <div className="white guess-field pos2"></div>
-        <div className="white guess-field pos3"></div>
-        <div className="white guess-field pos4"></div>
-        <div className="white guess-field pos5"></div>
-      </div>
+    <div className="gameBoard">
+      {gameBoard.map((value, index) => (
+        <div key={Math.random()} className="row">
+          {value.map((value, index) => (
+            <div key={Math.random()} className={`cell ${value.color}`}>
+              {value.char}
+            </div>
+          ))}
+        </div>
+      ))}
     </div>
   );
 }

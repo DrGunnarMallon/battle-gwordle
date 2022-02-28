@@ -15,6 +15,7 @@ Slice
 * setError
 * increaseNumOfGuesses
 * resetGame
+- addGuess
 
 
 Hooks
