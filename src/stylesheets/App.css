@@ -80,15 +80,15 @@ h1 {
   padding-block: 0.8rem;
   border-radius: 0.5rem;
   padding-inline: 2rem;
-  border: 0;
-  background: #333;
+  border: 1px solid #c8c;
+  background: #525;
   color: white;
   font-family: 'Poppins';
   cursor: pointer;
 }
 
 .btn:hover {
-  background: #111;
+  background: #313;
 }
 
 .btn:focus {
@@ -211,4 +211,30 @@ h1 {
 
 .correct {
   background: green;
+}
+
+.instructions {
+  max-width: 450px;
+  text-align: center;
+}
+
+.instructions a {
+  color: lightpink;
+  text-decoration: none;
+}
+
+.instructions ul {
+  text-align: justify;
+  list-style: none;
+  background: #333;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.instructions ul li {
+  padding-block: 0.5rem;
+}
+
+.title {
+  cursor: pointer;
 }

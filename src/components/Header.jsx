@@ -1,10 +1,20 @@
 import { FaChessRook } from 'react-icons/fa';
+import { useDispatch } from 'react-redux';
+import { resetGame } from '../features/game/gameSlice';
 
 function Header() {
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    dispatch(resetGame());
+  };
+
   return (
     <div className="header">
       <FaChessRook />
-      <div>GG Word Game</div>
+      <div onClick={handleClick} className="title">
+        GG Word Game
+      </div>
       <FaChessRook />
     </div>
   );

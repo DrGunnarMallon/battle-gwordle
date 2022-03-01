@@ -7,6 +7,7 @@ import GameBoard from './components/GameBoard';
 import { useSelector } from 'react-redux';
 import Footer from './components/Footer';
 import Letters from './components/Letters';
+import Instructions from './components/Instructions';
 
 function App() {
   const puzzleWord = useSelector((state) => state.game.puzzleWord);
@@ -17,6 +18,7 @@ function App() {
     <div className="App">
       <Header />
       {(isSolved || hasLost || !puzzleWord) && <NewGame />}
+      {!puzzleWord && <Instructions />}
       {puzzleWord && (
         <>
           {!isSolved && !hasLost && <InputField />}
