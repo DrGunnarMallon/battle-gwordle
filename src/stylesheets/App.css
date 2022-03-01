@@ -4,6 +4,8 @@ body {
   background: #222;
   color: #fff;
   font-family: 'Poppins';
+  margin: 0;
+  padding: 0;
 }
 
 .g {
@@ -33,15 +35,15 @@ h1 {
 
 .header {
   display: flex;
-  padding-top: 1.5rem;
+  padding-top: 1rem;
   gap: 1rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   justify-content: center;
   align-items: center;
 }
 
 .header svg {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .header .guess-input {
@@ -101,11 +103,11 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 3rem;
-  width: 3rem;
+  height: 2.3rem;
+  width: 2.3rem;
   border-radius: 10px;
   border: 1px solid #333;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .gameBoard {

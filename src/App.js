@@ -10,16 +10,18 @@ import Letters from './components/Letters';
 
 function App() {
   const puzzleWord = useSelector((state) => state.game.puzzleWord);
+  const isSolved = useSelector((state) => state.game.isSolved);
+  const hasLost = useSelector((state) => state.game.hasLost);
 
   return (
     <div className="App">
       <Header />
-      <NewGame />
+      {(isSolved || hasLost || !puzzleWord) && <NewGame />}
       {puzzleWord && (
         <>
-          <InputField />
+          {!isSolved && !hasLost && <InputField />}
           <GameBoard />
-          <Letters />
+          {!isSolved && !hasLost && <Letters />}
           <Footer />
         </>
       )}

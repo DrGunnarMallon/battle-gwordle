@@ -35,7 +35,7 @@ function GameBoard() {
             </div>
           ))}
         </div>
-        <p>Mate, you had 8 attempts! 🤣</p>
+        <p>You had 8 attempts! 🤣</p>
       </>
     );
   }
