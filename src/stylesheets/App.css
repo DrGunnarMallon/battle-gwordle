@@ -126,3 +126,68 @@ h1 {
   flex-direction: column;
   gap: 1.5rem;
 }
+
+.footer {
+  color: #aaa;
+  background: #222;
+  padding-block: 3rem;
+  font-size: 0.9rem;
+}
+
+.wrapper-close {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-block: 0.5rem;
+  color: white;
+  font-size: 1rem;
+}
+
+.wrapper-close .icon {
+  color: rgb(255, 128, 255);
+  font-size: 1.6rem;
+}
+
+.letters {
+  gap: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s ease;
+}
+
+.hidden-letters {
+  transition: all 0.5s ease;
+  transform: scale(0);
+}
+
+.letters .row {
+  display: flex;
+  gap: 0.2rem;
+  justify-content: center;
+}
+
+.letters .row div {
+  font-size: 0.9rem;
+  padding: 0.6rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 5px;
+  display: flex;
+  gap: 0.2rem;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #333;
+}
+
+.excluded {
+  color: #666;
+}
+
+.included {
+  background: yellow;
+  color: #333;
+}
+
+.correct {
+  background: green;
+}

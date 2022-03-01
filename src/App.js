@@ -5,6 +5,8 @@ import InputField from './components/InputField';
 import GameBoard from './components/GameBoard';
 
 import { useSelector } from 'react-redux';
+import Footer from './components/Footer';
+import Letters from './components/Letters';
 
 function App() {
   const puzzleWord = useSelector((state) => state.game.puzzleWord);
@@ -17,6 +19,8 @@ function App() {
         <>
           <InputField />
           <GameBoard />
+          <Letters />
+          <Footer />
         </>
       )}
     </div>

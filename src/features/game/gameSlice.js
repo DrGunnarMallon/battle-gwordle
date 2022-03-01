@@ -9,6 +9,7 @@ const initialState = {
   numOfGuesses: 0,
   isSolved: false,
   hasLost: false,
+  letters: [],
   error: '',
 };
 
@@ -34,6 +35,7 @@ export const gameSlice = createSlice({
       state.numOfGuesses = 0;
       state.isSolved = false;
       state.hasLost = false;
+      state.letters = [];
       state.error = '';
     },
     setError: (state, action) => {
@@ -54,6 +56,9 @@ export const gameSlice = createSlice({
       if (state.numOfGuesses === 8) {
         state.hasLost = true;
       }
+    },
+    addLetter: (state, action) => {
+      state.letters = gameService.addLetter(action.payload, state.letters);
     },
   },
   extraReducers: (builder) => {
@@ -79,5 +84,6 @@ export const {
   solvePuzzle,
   createNewPuzzleWord,
   addGuess,
+  addLetter,
 } = gameSlice.actions;
 export default gameSlice.reducer;
