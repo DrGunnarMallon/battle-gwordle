@@ -1,6 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { loadDictionary, createNewPuzzleWord, resetGame } from '../features/game/gameSlice';
+import {
+  loadDictionary,
+  loadMeaning,
+  createNewPuzzleWord,
+  resetGame,
+} from '../features/game/gameSlice';
 
 function NewGame() {
   const dispatch = useDispatch();
@@ -10,8 +15,10 @@ function NewGame() {
     if (!isDictionaryLoaded) {
       await dispatch(loadDictionary());
     }
-    dispatch(resetGame());
-    dispatch(createNewPuzzleWord());
+
+    await dispatch(resetGame());
+    await dispatch(createNewPuzzleWord());
+    await dispatch(loadMeaning());
   };
 
   return (

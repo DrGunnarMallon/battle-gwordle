@@ -26,9 +26,16 @@ const addLetter = (letter, letters) => {
   return working;
 };
 
+const loadMeaning = async (word) => {
+  const res = await fetch('https://api.dictionaryapi.dev/api/v2/entries/en/'.concat(word));
+  const data = await res.json();
+  return data[0].meanings[0].definitions[0].definition;
+};
+
 const gameService = {
   loadDictionary,
   addLetter,
+  loadMeaning,
 };
 
 export default gameService;

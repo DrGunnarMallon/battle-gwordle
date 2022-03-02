@@ -4,7 +4,7 @@ function Instructions() {
   return (
     <div className="instructions">
       <p>
-        GG Word Game is a take on the famous Wordle game by{' '}
+        GG Word Game is a take on the famous game by{' '}
         <a target="__new" href="https://powerlanguage.co.uk/">
           Josh Wardle
         </a>

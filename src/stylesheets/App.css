@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&family=Roboto:wght@100;400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Poppins:wght@100;400;600&display=swap');
 
 body {
   background: #222;
@@ -80,15 +80,15 @@ h1 {
   padding-block: 0.8rem;
   border-radius: 0.5rem;
   padding-inline: 2rem;
-  border: 1px solid #c8c;
-  background: #525;
+  border: 1px solid #5c5;
+  background: #151;
   color: white;
   font-family: 'Poppins';
   cursor: pointer;
 }
 
 .btn:hover {
-  background: #313;
+  background: #383;
 }
 
 .btn:focus {
@@ -216,15 +216,19 @@ h1 {
 .instructions {
   max-width: 450px;
   text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
 }
 
 .instructions a {
-  color: lightpink;
+  color: #5c5;
   text-decoration: none;
 }
 
 .instructions ul {
-  text-align: justify;
+  /* text-align: justify; */
   list-style: none;
   background: #333;
   padding: 1rem;
