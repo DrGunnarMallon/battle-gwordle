@@ -6,6 +6,8 @@ I've always loved playing Wordle, but thought that it would be nice to be able t
 
 Battle Wordle, let's you do this. 
 
+See it in action at [www.gunnarmallon.com](https://www.gunnarmallon.com/wordgame).
+
 ## Node.js
 
 The server side that handles the game lobby and matches up players is based on Node.js with socket.io
