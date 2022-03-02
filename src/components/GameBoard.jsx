@@ -21,7 +21,8 @@ function GameBoard() {
             </div>
           ))}
         </div>
-        "{meaning}"<p>Legend 😎</p>
+        <div className="meaning">"{meaning}"</div>
+        <p>Legend 😎</p>
       </>
     );
   }
@@ -37,7 +38,8 @@ function GameBoard() {
             </div>
           ))}
         </div>
-        "{meaning}"<p>You had 8 attempts! 🤣</p>
+        <div className="meaning">"{meaning}"</div>
+        <p>You had 8 attempts! 🤣</p>
       </>
     );
   }
